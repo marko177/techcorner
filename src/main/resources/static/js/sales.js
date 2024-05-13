@@ -11,6 +11,10 @@ $(document).ready(function () {
         autoWidth: false,
         order: [[0, 'asc']],
     });
+    $('.print-icon').click(function () {
+        const id = $(this).data('id');
+        window.location.href = '/api/sales/receipt/' + id;
+    });
 });
 
 $('.showDetailsButton').click(function () {

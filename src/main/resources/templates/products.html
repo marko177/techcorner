@@ -25,8 +25,8 @@
                 <li class="nav-item"><a class="nav-link" href="sales"><i class="far fa-file-alt"></i><span>Sales</span></a></li>
                 <li class="nav-item"><a class="nav-link active" href="products"><i class="fas fa-table"></i><span>Products</span></a></li>
                 <li class="nav-item"><a class="nav-link" href="profile"><i class="fas fa-user"></i><span>Profile</span></a></li>
-                <li class="nav-item"><a class="nav-link" href="login"><i class="far fa-user-circle"></i><span>Login</span></a></li>
-                <li class="nav-item"><a class="nav-link" href="register"><i class="fas fa-user-circle"></i><span>Register</span></a></li>
+<!--                <li class="nav-item"><a class="nav-link" href="login"><i class="far fa-user-circle"></i><span>Login</span></a></li>-->
+<!--                <li class="nav-item"><a class="nav-link" href="register"><i class="fas fa-user-circle"></i><span>Register</span></a></li>-->
             </ul>
             <div class="text-center d-none d-md-inline">
                 <button class="btn rounded-circle border-0" id="sidebarToggle" type="button"></button>
@@ -59,20 +59,9 @@
                         </li>
                         <div class="d-none d-sm-block topbar-divider"></div>
                         <li class="nav-item dropdown no-arrow">
-                            <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link"
-                                                                       aria-expanded="false" data-bs-toggle="dropdown"
-                                                                       href="#"><span
-                                    class="d-none d-lg-inline me-2 text-gray-600 small">Marco Sarmiento</span></a>
-                                <div class="dropdown-menu shadow dropdown-menu-end animated--grow-in"><a
-                                        class="dropdown-item" href="#"><i
-                                        class="fas fa-user fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Profile</a><a
-                                        class="dropdown-item" href="#"><i
-                                        class="fas fa-cogs fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Settings</a><a
-                                        class="dropdown-item" href="#"><i
-                                        class="fas fa-list fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Activity log</a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#"><i
-                                            class="fas fa-sign-out-alt fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Logout</a>
+                            <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#"><span class="d-none d-lg-inline me-2 text-gray-600 small">Marco Sarmiento</span></a>
+                                <div class="dropdown-menu shadow dropdown-menu-end animated--grow-in"><a class="dropdown-item" href="/profile"><i class="fas fa-user fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Profile</a>
+                                    <div class="dropdown-divider"></div><a class="dropdown-item" href="/logout"><i class="fas fa-sign-out-alt fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Logout</a>
                                 </div>
                             </div>
                         </li>
@@ -115,7 +104,7 @@
                                     <td th:text="${product.description}"></td>
                                     <td th:text="${product.category}"></td>
                                     <td th:text="${product.stock}"></td>
-                                    <td th:text="${product.price}"></td>
+                                    <td th:text="'$' + ${#numbers.formatDecimal(product.price, 1, 'COMMA', 2, 'POINT')}"></td>
                                     <td>
                                         <button class="btn btn-primary editProductButton" th:data-id="${product.id}"
                                                 type="button">Edit
@@ -160,7 +149,7 @@
                                 </div>
                                 <div class="mb-3">
                                     <label for="price" class="form-label">Price</label>
-                                    <input type="number" class="form-control" id="price">
+                                    <input type="number" class="form-control" id="price" step="0.01">
                                 </div>
                             </div>
                             <div class="modal-footer">
@@ -201,7 +190,7 @@
                                 </div>
                                 <div class="mb-3">
                                     <label for="editPrice" class="form-label">Price</label>
-                                    <input type="number" class="form-control" id="editPrice">
+                                    <input type="number" class="form-control" id="editPrice" step="0.01">
                                 </div>
                             </div>
                             <div class="modal-footer">

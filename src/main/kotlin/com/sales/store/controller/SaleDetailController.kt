@@ -1,6 +1,5 @@
 package com.sales.store.controller
 
-import com.sales.store.dto.SaleDetailDTO
 import com.sales.store.model.SaleDetail
 import com.sales.store.service.SaleDetailService
 import org.springframework.beans.factory.annotation.Autowired

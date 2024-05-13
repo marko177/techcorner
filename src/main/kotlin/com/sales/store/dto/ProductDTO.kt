@@ -1,6 +1,6 @@
 package com.sales.store.dto
 
-class ProductDTO {
+class   ProductDTO {
     var id: Int? = null
     var sku: String? = null
     var description: String? = null

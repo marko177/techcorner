@@ -105,6 +105,8 @@ $(document).ready(function() {
             return;
         }
 
+        const userId = $('#userId').val();
+        console.log('User ID:', userId);
         const subtotalAmount = parseFloat($('.subtotal').text().replace('$', ''));
         const taxAmount = parseFloat($('.iva').text().replace('$', ''));
         const totalAmountText = $('.total').text().replace('$', '').trim();
@@ -114,7 +116,7 @@ $(document).ready(function() {
 
         if (paymentAmount >= totalAmount) {
             let sale = {
-                userId: 1,
+                userId: userId,
                 preTaxTotal: subtotalAmount,
                 tax: taxAmount,
                 total: totalAmount,
