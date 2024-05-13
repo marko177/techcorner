@@ -16,4 +16,8 @@ class UserService @Autowired constructor(
     fun saveUser(user: User): User {
         return userRepository.save(user)
     }
+
+    fun validateUser(username: String?, password: String?): Boolean {
+        return userRepository.findByUsernameAndPassword(username, password) != null
+    }
 }

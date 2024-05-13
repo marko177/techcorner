@@ -3,7 +3,7 @@ package com.sales.store.model
 import jakarta.persistence.*
 
 @Entity
-@Table(name = "user")
+@Table(name = "username")
 class User {
 
     @Id
