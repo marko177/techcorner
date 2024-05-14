@@ -31,6 +31,7 @@ document.getElementById('addProductForm').addEventListener('submit', function (e
     const category = document.getElementById('category').value;
     const stock = parseInt(document.getElementById('stock').value);
     const price = parseFloat(document.getElementById('price').value);
+    const image = document.getElementById('image').value;
 
     // Create a product object
     const product = {
@@ -38,7 +39,8 @@ document.getElementById('addProductForm').addEventListener('submit', function (e
         description: description,
         category: category,
         stock: stock,
-        price: price
+        price: price,
+        image: image
     };
 
     fetch('/api/products/add', {
@@ -87,10 +89,12 @@ $('.editProductButton').click(function () {
             $('#editCategory').val(product.category);
             $('#editStock').val(product.stock);
             $('#editPrice').val(product.price);
+            $('#editImage').val(product.image);
 
             // Open the edit modal
             $('#editProductModal').modal('show');
         });
+
 });
 
 // Handle form submission of the edit modal
@@ -104,6 +108,7 @@ document.getElementById('editProductForm').addEventListener('submit', function (
     const category = document.getElementById('editCategory').value;
     const stock = parseInt(document.getElementById('editStock').value);
     const price = parseFloat(document.getElementById('editPrice').value);
+    const image = document.getElementById('editImage').value;
 
     // Create a product object
     const product = {
@@ -112,7 +117,8 @@ document.getElementById('editProductForm').addEventListener('submit', function (
         description: description,
         category: category,
         stock: stock,
-        price: price
+        price: price,
+        image: image
     };
 
     // Make PUT request to update the product

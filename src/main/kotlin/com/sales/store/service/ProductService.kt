@@ -24,6 +24,7 @@ class ProductService {
         product.category = productDTO.category
         product.stock = productDTO.stock
         product.price = productDTO.price
+        product.image = productDTO.image
 
         return productRepository.save(product)
     }
@@ -43,6 +44,7 @@ class ProductService {
         product.category = productDTO.category
         product.stock = productDTO.stock
         product.price = productDTO.price
+        product.image = productDTO.image
 
         // Save the updated product using the repository
         return productRepository.save(product)

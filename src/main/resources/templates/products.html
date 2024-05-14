@@ -90,6 +90,7 @@
                             <table class="table my-0" id="dataTable">
                                 <thead>
                                 <tr>
+                                    <th>Image</th>
                                     <th>SKU</th>
                                     <th>Description</th>
                                     <th>Category</th>
@@ -100,6 +101,8 @@
                                 </thead>
                                 <tbody>
                                 <tr th:each="product: ${products}">
+                                    <!-- show image from web -->
+                                     <td><img th:src="${product.image}" width="50" height="50" alt="image"></td>
                                     <td th:text="${product.sku}"></td>
                                     <td th:text="${product.description}"></td>
                                     <td th:text="${product.category}"></td>
@@ -151,6 +154,10 @@
                                     <label for="price" class="form-label">Price</label>
                                     <input type="number" class="form-control" id="price" step="0.01">
                                 </div>
+                                <div class="mb-3">
+                                    <label for="image" class="form-label">Image Link</label>
+                                    <input type="text" class="form-control" id="image">
+                                </div>
                             </div>
                             <div class="modal-footer">
                                 <button class="btn btn-light" type="button" data-bs-dismiss="modal">Close</button>
@@ -191,6 +198,10 @@
                                 <div class="mb-3">
                                     <label for="editPrice" class="form-label">Price</label>
                                     <input type="number" class="form-control" id="editPrice" step="0.01">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="editImage" class="form-label">Image Link</label>
+                                    <input type="text" class="form-control" id="editImage">
                                 </div>
                             </div>
                             <div class="modal-footer">

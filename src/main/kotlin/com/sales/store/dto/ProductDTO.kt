@@ -7,4 +7,5 @@ class   ProductDTO {
     var category: String? = null
     var stock: Int? = null
     var price: Double? = null
+    var image: String? = null
 }
